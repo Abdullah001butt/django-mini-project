@@ -1,0 +1,36 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} Default Value {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    {% tailwind_css %}
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-amber-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <span class="text-white font-bold text-xl">Abdullah aur Code</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="{% url 'all_chai' %}" class="text-white hover:bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">All Chai</a>
+                        <a href="#" class="text-white hover:bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#" class="text-white hover:bg-amber-700 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+</body>
+</html>
